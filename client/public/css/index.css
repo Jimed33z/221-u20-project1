@@ -1,6 +1,6 @@
 body {
-  background-image: url("/images/campus.png");
-  background-color: #ece0eca6;
+  background-image: url("/images/campus3.jpg");
+  background-color: hsla(300, 24%, 90%, 0.651);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,13 +8,21 @@ body {
   height: 100vh;
 }
 
+
+
 #splash_title {
-	width: 100%;
+	
+  width: 100%;
   font-size: 100px;
-  color: red;
+  color: darkred;
   opacity: 0.85;
-  text-shadow: 4px 4px 4px rgba(255, 255, 255);
+  text-shadow: 4px 4px 4px rgb(31 30 30);
   text-align: center;
+  background-color: radical-gradient(black, transparent);
+  height: 300px;
+  
+  
+  
 }
 
 .menu_button {

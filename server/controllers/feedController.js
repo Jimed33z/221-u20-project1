@@ -34,7 +34,7 @@ exports.savefeedItem = function(req, res) {
 
 
 
-//function 3 
+//get
 exports.getfeedItem = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
     res.send(currentStories[req.params.feedItemId]);
@@ -42,7 +42,7 @@ exports.getfeedItem = function(req, res) {
 
 
 
-//function 4 
+//delete
 exports.deletefeedItem = function(req, res) {
 	currentStories.splice(req.params.feedItemId, 1);
 	res.setHeader('Content-Type', 'application/json');
@@ -50,7 +50,7 @@ exports.deletefeedItem = function(req, res) {
 }
  
 
-// funtion 5 
+// post
 exports.updatefeedItem = function(req, res) {
 	let updatedfeedItem = currentStories[req.params.feedItemId];
 
@@ -72,12 +72,12 @@ exports.updatefeedItem = function(req, res) {
 	res.send(currentStories[req.params.feedItemId]);
 }
 
-
+//patch
 exports.replacefeedItem = function(req,res) {
     let updatefeedItem = currentStories[req.params.feedItemId];
 
     console.log(req.body.title);
-    if(req.body.title && req.body.body && req.body.linkUrl && req.body.imageUrl)
+    if(req.body.title && req.body.body && req.body.linkURL& req.body.imageURL)
         updatefeedItem.title = req.body.title;
         updatefeedItem.title = req.body.body;
         updatefeedItem.title = req.body.linkUrl;
@@ -89,6 +89,14 @@ exports.replacefeedItem = function(req,res) {
     res.send(currentStories[req.params.feedItemId]);
 }
 
+//put
+exports.putfeedItem = function(req,res){
+	let updatedfeedItem = currentStories[req.params.feedItemId];
+	console.log(req.body.title);
+	currentStories[req.params.feedItemId] = updatedfeedItem;
+	res.setHeader('Content-Type' , 'application/json');
+	res.send(currentStories[req.params.feedItemId]);
+}
 
 
 
